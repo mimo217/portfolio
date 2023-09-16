@@ -1,6 +1,7 @@
 import {StrictMode} from "react"
 import { createRoot } from "react-dom/client"
 import App from './pages/App/app'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './pages/home/home.scss'
 import { BrowserRouter as Router } from 'react-router-dom'
 const root = createRoot(document.getElementById("app"))
