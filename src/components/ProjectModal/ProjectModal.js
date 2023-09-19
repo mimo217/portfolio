@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import './ProjectModal.scss'
 
 function ProjectModal({ projectsData }) {
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false)
 
   const toggleModal = () => {
     setShowModal(!showModal)
-  };
+  }
 
   return (
     <div>
@@ -31,7 +31,7 @@ function ProjectModal({ projectsData }) {
         </div>
       )}
     </div>
-  );
+  )
 }
 
-export default ProjectModal;
+export default ProjectModal
