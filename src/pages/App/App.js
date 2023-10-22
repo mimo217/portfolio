@@ -20,7 +20,7 @@ function App() {
         const data = await response.json()
         setPortfolioData(data)
       } catch (error) {
-        console.error('Error fetching portfolio data:', error)
+        res.status(500).json({ message: error.message })
       }
     };
 

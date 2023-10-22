@@ -1,10 +1,6 @@
 body {
   margin: 0;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background: linear-gradient(to right, pink 70%, #007bff 30%);
 }
 
@@ -14,17 +10,13 @@ body {
   align-items: flex-start;
   width: 100%;
   padding: 20px;
-}
-
-.logo {
-  display: flex;
-  margin-top: 0;
-  margin-bottom: 10px; 
+  position: relative;
 }
 
 .logo img {
-  width: 500px;
-  height: auto; 
+  width: 175px;
+  height: auto;
+  margin-top: -30px;
 }
 
 .navigation {
@@ -46,7 +38,6 @@ body {
   gap: 20px;
 }
 
-/* Style the buttons */
 .navigation ul li button {
   background-color: transparent;
   border: none;

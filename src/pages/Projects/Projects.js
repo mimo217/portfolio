@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import ProjectModal from '../../components/ProjectModal/ProjectModal'
+import '../../components/ProjectModal/ProjectModal.scss'
 
 function Projects() {
   const [projectsData, setProjectsData] = useState([])
   const [selectedProject, setSelectedProject] = useState(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,16 +25,17 @@ function Projects() {
   }, [])
 
   const openProjectModal = (project) => {
-    setSelectedProject(project);
+    setSelectedProject(project)
+    isModalOpen(true)
   }
 
   const closeProjectModal = () => {
-    setSelectedProject(null);
+    setSelectedProject(null)
+    isModalOpen(false)
   }
 
   return (
     <div>
-      <h1></h1>
       <ul>
         {projectsData.map((project) => (
           <li key={project.id}>
@@ -43,14 +46,24 @@ function Projects() {
         ))}
       </ul>
 
-      {selectedProject && (
+      {isModalOpen && (
         <ProjectModal
-          project={selectedProject}
+          selectedProject={selectedProject}
+          isModalOpen
           onClose={closeProjectModal}
         />
+      )}
+
+    {/* Debugging information */}
+    {selectedProject && (
+        <div>
+          <pre>{JSON.stringify(selectedProject, null, 2)}</pre>
+        </div>
       )}
     </div>
   );
 }
+
+
 
 export default Projects;
